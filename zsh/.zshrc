@@ -10,6 +10,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias poka_baterie="pmset -g batt"
 alias daj_java8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
+fetch_and_checkout(){ git fetch origin $1 && git checkout $1
+}
 
 source .zshrc-secrets
 
