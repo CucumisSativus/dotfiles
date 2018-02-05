@@ -1,3 +1,3 @@
 #!bin/bash
 
-defaults write com.apple.screencapture location /User/michal/Pictures/screenshots
+defaults write com.apple.screencapture location /Users/michal/Pictures/screenshots
