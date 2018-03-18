@@ -10,8 +10,11 @@ source $ZSH/oh-my-zsh.sh
 
 alias poka_baterie="pmset -g batt"
 alias daj_java8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
+alias usmiechnieta_kupka="say 💩"
 fetch_and_checkout(){ git fetch origin $1 && git checkout $1
 }
 
-source .zshrc-secrets
+export SBT_OPTS="-Xmx6G -XX:+CMSClassUnloadingEnabled -Xss2M  -Duser.timezone=GMT"
+
+source $HOME/.zshrc-secrets
 
