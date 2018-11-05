@@ -15,6 +15,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'git://github.com/tpope/vim-surround.git'
 Plugin 'elmcast/elm-vim'
 Plugin 'wincent/terminus'
+set rtp+=/usr/local/Cellar/fzf/0.17.3/
+Plugin 'junegunn/fzf.vim'
 
 
 call vundle#end()            " required
@@ -49,11 +51,19 @@ set backspace=indent,eol,start
 set directory=$HOME/.vim-swapfiles//
 set number
 
-"Nerdtree
-map <A-1> :NERDTreeToggle<CR>
+"custom leader
+let mapleader = ","
 
+"Nerdtree
+nmap <A-1> :NERDTreeToggle<CR>
+nmap <Leader>ne :NERDTreeToggle<CR>
+nmap ; :Buffers<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>r :Tags<CR>
+nmap // :noh<CR>
+nmap \p :r !cat<CR>
 "Clear search
-nnoremap <esc> :noh<return><esc>
+" nnoremap <esc> :noh<return><esc>
 
 "bottom line theme
 let g:airline_theme='solarized'
