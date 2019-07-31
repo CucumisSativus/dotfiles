@@ -21,7 +21,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 
 set linebreak	
@@ -57,4 +57,4 @@ nnoremap <esc> :noh<return><esc>
 
 "bottom line theme
 let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_solarized_bg='light'

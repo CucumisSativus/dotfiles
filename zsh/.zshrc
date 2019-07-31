@@ -21,6 +21,7 @@ source $ZSH/oh-my-zsh.sh
 fetch_and_checkout(){ git fetch origin $1 && git checkout $1 }
 
 export SBT_OPTS="-Xmx6G -XX:+CMSClassUnloadingEnabled -Xss2M  -Duser.timezone=GMT"
+export PATH="$HOME/.bloop:$HOME/.local/bin:$PATH"
 
 # Secrets
 if [ -f $HOME/.zshrc-secrets ]; then
@@ -37,3 +38,18 @@ fi
 if [ -f $FZF_BINDIGNS_PATH ]; then
     source $FZF_BINDIGNS_PATH
 fi
+
+
+autoload -U compinit
+
+# bloop completion
+if [ -d $HOME/.bloop ]; then
+  fpath=($HOME/.bloop/zsh $fpath)
+fi
+
+# rust completion
+if [ -d $HOME/.zfunc ]; then
+  fpath+=~/.zfunc
+fi  
+
+compinit
