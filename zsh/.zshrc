@@ -8,6 +8,7 @@ case "$(uname -s)" in
 
    Darwin)
      plugins=(git osx docker docker-compose emacs)
+     FZF_BINDIGNS_PATH="/usr/local/opt/fzf/shell/key-bindings.zsh"
      ;;
 
    Linux)
@@ -22,6 +23,8 @@ fetch_and_checkout(){ git fetch origin $1 && git checkout $1 }
 
 export SBT_OPTS="-Xmx6G -XX:+CMSClassUnloadingEnabled -Xss2M  -Duser.timezone=GMT"
 export PATH="$HOME/.bloop:$HOME/.local/bin:$PATH"
+
+source $HOME/.zshrc-secrets
 
 # Secrets
 if [ -f $HOME/.zshrc-secrets ]; then
