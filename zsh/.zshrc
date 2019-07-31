@@ -42,9 +42,6 @@ if [ -f $FZF_BINDIGNS_PATH ]; then
     source $FZF_BINDIGNS_PATH
 fi
 
-
-autoload -U compinit
-
 # bloop completion
 if [ -d $HOME/.bloop ]; then
   fpath=($HOME/.bloop/zsh $fpath)
@@ -55,4 +52,5 @@ if [ -d $HOME/.zfunc ]; then
   fpath+=~/.zfunc
 fi  
 
+autoload -U compinit
 compinit
